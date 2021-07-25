@@ -1,0 +1,2376 @@
+2021-07-23 16:41:01 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:710
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(710): PDO->__construct('mysql:host=loca...', '', '', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(631): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('7a2404201f70a44...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('7a2404201f70a44...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#11 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#13 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#14 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('cron-mutex', 0)
+#15 /var/www/html/protected/humhub/commands/CronController.php(49): yii\mutex\Mutex->acquire('cron-mutex')
+#16 [internal function]: humhub\commands\CronController->actionRun()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#21 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('cron/run', Array)
+#22 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('cron/run', Array)
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#24 /var/www/html/protected/yii(29): yii\base\Application->run()
+#25 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('7a2404201f70a44...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('7a2404201f70a44...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#9 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#11 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('cron-mutex', 0)
+#13 /var/www/html/protected/humhub/commands/CronController.php(49): yii\mutex\Mutex->acquire('cron-mutex')
+#14 [internal function]: humhub\commands\CronController->actionRun()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#16 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#17 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('cron/run', Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('cron/run', Array)
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 /var/www/html/protected/yii(29): yii\base\Application->run()
+#23 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2002
+    [2] => No such file or directory
+)
+
+2021-07-23 16:41:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033261.8299
+    'REQUEST_TIME' => 1627033261
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'cron/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:41:01 [-][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1088): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(93): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(158): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(191): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(137): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2021-07-23 16:41:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033261.8299
+    'REQUEST_TIME' => 1627033261
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'cron/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:41:01 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:710
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(710): PDO->__construct('mysql:host=loca...', '', '', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(631): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('fbeb070104f6587...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('fbeb070104f6587...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#11 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1104): call_user_func(Object(Closure), Object(yii\db\Connection))
+#13 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#14 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('yii\\queue\\db\\Qu...', 3)
+#15 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(177): yii\mutex\Mutex->acquire('yii\\queue\\db\\Qu...', 3)
+#16 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(yii\db\Connection))
+#17 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#18 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(212): yii\db\Connection->useMaster(Object(Closure))
+#19 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(78): yii\queue\db\Queue->reserve()
+#20 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(Closure))
+#21 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/cli/Queue.php(117): call_user_func(Object(Closure), Object(Closure))
+#22 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(93): yii\queue\cli\Queue->runWorker(Object(Closure))
+#23 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Command.php(56): yii\queue\db\Queue->run(false)
+#24 [internal function]: yii\queue\db\Command->actionRun()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#27 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#28 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#29 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('queue/run', Array)
+#30 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('queue/run', Array)
+#31 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#32 /var/www/html/protected/yii(29): yii\base\Application->run()
+#33 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('fbeb070104f6587...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('fbeb070104f6587...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#9 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1104): call_user_func(Object(Closure), Object(yii\db\Connection))
+#11 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('yii\\queue\\db\\Qu...', 3)
+#13 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(177): yii\mutex\Mutex->acquire('yii\\queue\\db\\Qu...', 3)
+#14 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(yii\db\Connection))
+#15 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#16 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(212): yii\db\Connection->useMaster(Object(Closure))
+#17 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(78): yii\queue\db\Queue->reserve()
+#18 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(Closure))
+#19 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/cli/Queue.php(117): call_user_func(Object(Closure), Object(Closure))
+#20 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(93): yii\queue\cli\Queue->runWorker(Object(Closure))
+#21 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Command.php(56): yii\queue\db\Queue->run(false)
+#22 [internal function]: yii\queue\db\Command->actionRun()
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#25 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#27 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('queue/run', Array)
+#28 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('queue/run', Array)
+#29 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#30 /var/www/html/protected/yii(29): yii\base\Application->run()
+#31 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2002
+    [2] => No such file or directory
+)
+
+2021-07-23 16:41:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033261.8335
+    'REQUEST_TIME' => 1627033261
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'queue/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:41:01 [-][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1088): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(93): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(158): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(191): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(137): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2021-07-23 16:41:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033261.8335
+    'REQUEST_TIME' => 1627033261
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'queue/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:42:02 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:710
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(710): PDO->__construct('mysql:host=loca...', '', '', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(631): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('7a2404201f70a44...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('7a2404201f70a44...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#11 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#13 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#14 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('cron-mutex', 0)
+#15 /var/www/html/protected/humhub/commands/CronController.php(49): yii\mutex\Mutex->acquire('cron-mutex')
+#16 [internal function]: humhub\commands\CronController->actionRun()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#21 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('cron/run', Array)
+#22 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('cron/run', Array)
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#24 /var/www/html/protected/yii(29): yii\base\Application->run()
+#25 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('7a2404201f70a44...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('7a2404201f70a44...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#9 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#11 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('cron-mutex', 0)
+#13 /var/www/html/protected/humhub/commands/CronController.php(49): yii\mutex\Mutex->acquire('cron-mutex')
+#14 [internal function]: humhub\commands\CronController->actionRun()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#16 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#17 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('cron/run', Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('cron/run', Array)
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 /var/www/html/protected/yii(29): yii\base\Application->run()
+#23 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2002
+    [2] => No such file or directory
+)
+
+2021-07-23 16:42:02 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033322.0978
+    'REQUEST_TIME' => 1627033322
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'cron/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:42:02 [-][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1088): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(93): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(158): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(191): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(137): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2021-07-23 16:42:02 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033322.0978
+    'REQUEST_TIME' => 1627033322
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'cron/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:42:02 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:710
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(710): PDO->__construct('mysql:host=loca...', '', '', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(631): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('fbeb070104f6587...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('fbeb070104f6587...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#11 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1104): call_user_func(Object(Closure), Object(yii\db\Connection))
+#13 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#14 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('yii\\queue\\db\\Qu...', 3)
+#15 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(177): yii\mutex\Mutex->acquire('yii\\queue\\db\\Qu...', 3)
+#16 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(yii\db\Connection))
+#17 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#18 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(212): yii\db\Connection->useMaster(Object(Closure))
+#19 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(78): yii\queue\db\Queue->reserve()
+#20 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(Closure))
+#21 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/cli/Queue.php(117): call_user_func(Object(Closure), Object(Closure))
+#22 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(93): yii\queue\cli\Queue->runWorker(Object(Closure))
+#23 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Command.php(56): yii\queue\db\Queue->run(false)
+#24 [internal function]: yii\queue\db\Command->actionRun()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#27 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#28 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#29 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('queue/run', Array)
+#30 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('queue/run', Array)
+#31 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#32 /var/www/html/protected/yii(29): yii\base\Application->run()
+#33 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('fbeb070104f6587...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('fbeb070104f6587...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#9 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1104): call_user_func(Object(Closure), Object(yii\db\Connection))
+#11 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('yii\\queue\\db\\Qu...', 3)
+#13 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(177): yii\mutex\Mutex->acquire('yii\\queue\\db\\Qu...', 3)
+#14 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(yii\db\Connection))
+#15 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#16 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(212): yii\db\Connection->useMaster(Object(Closure))
+#17 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(78): yii\queue\db\Queue->reserve()
+#18 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(Closure))
+#19 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/cli/Queue.php(117): call_user_func(Object(Closure), Object(Closure))
+#20 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(93): yii\queue\cli\Queue->runWorker(Object(Closure))
+#21 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Command.php(56): yii\queue\db\Queue->run(false)
+#22 [internal function]: yii\queue\db\Command->actionRun()
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#25 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#27 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('queue/run', Array)
+#28 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('queue/run', Array)
+#29 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#30 /var/www/html/protected/yii(29): yii\base\Application->run()
+#31 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2002
+    [2] => No such file or directory
+)
+
+2021-07-23 16:42:02 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033322.1471
+    'REQUEST_TIME' => 1627033322
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'queue/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:42:02 [-][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1088): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(93): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(158): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(191): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(137): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2021-07-23 16:42:02 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033322.1471
+    'REQUEST_TIME' => 1627033322
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'queue/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:43:01 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:710
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(710): PDO->__construct('mysql:host=loca...', '', '', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(631): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('7a2404201f70a44...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('7a2404201f70a44...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#11 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#13 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#14 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('cron-mutex', 0)
+#15 /var/www/html/protected/humhub/commands/CronController.php(49): yii\mutex\Mutex->acquire('cron-mutex')
+#16 [internal function]: humhub\commands\CronController->actionRun()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#21 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('cron/run', Array)
+#22 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('cron/run', Array)
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#24 /var/www/html/protected/yii(29): yii\base\Application->run()
+#25 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('7a2404201f70a44...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('7a2404201f70a44...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#9 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#11 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('cron-mutex', 0)
+#13 /var/www/html/protected/humhub/commands/CronController.php(49): yii\mutex\Mutex->acquire('cron-mutex')
+#14 [internal function]: humhub\commands\CronController->actionRun()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#16 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#17 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('cron/run', Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('cron/run', Array)
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 /var/www/html/protected/yii(29): yii\base\Application->run()
+#23 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2002
+    [2] => No such file or directory
+)
+
+2021-07-23 16:43:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033381.3294
+    'REQUEST_TIME' => 1627033381
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'cron/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:43:01 [-][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1088): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(93): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(158): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(191): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(137): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2021-07-23 16:43:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033381.3294
+    'REQUEST_TIME' => 1627033381
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'cron/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:43:01 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:710
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(710): PDO->__construct('mysql:host=loca...', '', '', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(631): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('fbeb070104f6587...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('fbeb070104f6587...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#11 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1104): call_user_func(Object(Closure), Object(yii\db\Connection))
+#13 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#14 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('yii\\queue\\db\\Qu...', 3)
+#15 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(177): yii\mutex\Mutex->acquire('yii\\queue\\db\\Qu...', 3)
+#16 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(yii\db\Connection))
+#17 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#18 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(212): yii\db\Connection->useMaster(Object(Closure))
+#19 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(78): yii\queue\db\Queue->reserve()
+#20 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(Closure))
+#21 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/cli/Queue.php(117): call_user_func(Object(Closure), Object(Closure))
+#22 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(93): yii\queue\cli\Queue->runWorker(Object(Closure))
+#23 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Command.php(56): yii\queue\db\Queue->run(false)
+#24 [internal function]: yii\queue\db\Command->actionRun()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#27 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#28 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#29 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('queue/run', Array)
+#30 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('queue/run', Array)
+#31 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#32 /var/www/html/protected/yii(29): yii\base\Application->run()
+#33 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('fbeb070104f6587...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('fbeb070104f6587...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#9 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1104): call_user_func(Object(Closure), Object(yii\db\Connection))
+#11 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('yii\\queue\\db\\Qu...', 3)
+#13 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(177): yii\mutex\Mutex->acquire('yii\\queue\\db\\Qu...', 3)
+#14 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(yii\db\Connection))
+#15 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#16 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(212): yii\db\Connection->useMaster(Object(Closure))
+#17 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(78): yii\queue\db\Queue->reserve()
+#18 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(Closure))
+#19 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/cli/Queue.php(117): call_user_func(Object(Closure), Object(Closure))
+#20 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(93): yii\queue\cli\Queue->runWorker(Object(Closure))
+#21 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Command.php(56): yii\queue\db\Queue->run(false)
+#22 [internal function]: yii\queue\db\Command->actionRun()
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#25 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#27 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('queue/run', Array)
+#28 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('queue/run', Array)
+#29 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#30 /var/www/html/protected/yii(29): yii\base\Application->run()
+#31 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2002
+    [2] => No such file or directory
+)
+
+2021-07-23 16:43:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033381.3328
+    'REQUEST_TIME' => 1627033381
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'queue/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:43:01 [-][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1088): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(93): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(158): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(191): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(137): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2021-07-23 16:43:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033381.3328
+    'REQUEST_TIME' => 1627033381
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'queue/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:44:01 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:710
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(710): PDO->__construct('mysql:host=loca...', '', '', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(631): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('7a2404201f70a44...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('7a2404201f70a44...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#11 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#13 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#14 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('cron-mutex', 0)
+#15 /var/www/html/protected/humhub/commands/CronController.php(49): yii\mutex\Mutex->acquire('cron-mutex')
+#16 [internal function]: humhub\commands\CronController->actionRun()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#21 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('cron/run', Array)
+#22 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('cron/run', Array)
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#24 /var/www/html/protected/yii(29): yii\base\Application->run()
+#25 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('7a2404201f70a44...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('7a2404201f70a44...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#9 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#11 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('cron-mutex', 0)
+#13 /var/www/html/protected/humhub/commands/CronController.php(49): yii\mutex\Mutex->acquire('cron-mutex')
+#14 [internal function]: humhub\commands\CronController->actionRun()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#16 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#17 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('cron/run', Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('cron/run', Array)
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 /var/www/html/protected/yii(29): yii\base\Application->run()
+#23 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2002
+    [2] => No such file or directory
+)
+
+2021-07-23 16:44:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033441.4658
+    'REQUEST_TIME' => 1627033441
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'cron/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:44:01 [-][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1088): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(93): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(158): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(191): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(137): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2021-07-23 16:44:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033441.4658
+    'REQUEST_TIME' => 1627033441
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'cron/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:44:01 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:710
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(710): PDO->__construct('mysql:host=loca...', '', '', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(631): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('fbeb070104f6587...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('fbeb070104f6587...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#11 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1104): call_user_func(Object(Closure), Object(yii\db\Connection))
+#13 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#14 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('yii\\queue\\db\\Qu...', 3)
+#15 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(177): yii\mutex\Mutex->acquire('yii\\queue\\db\\Qu...', 3)
+#16 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(yii\db\Connection))
+#17 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#18 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(212): yii\db\Connection->useMaster(Object(Closure))
+#19 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(78): yii\queue\db\Queue->reserve()
+#20 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(Closure))
+#21 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/cli/Queue.php(117): call_user_func(Object(Closure), Object(Closure))
+#22 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(93): yii\queue\cli\Queue->runWorker(Object(Closure))
+#23 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Command.php(56): yii\queue\db\Queue->run(false)
+#24 [internal function]: yii\queue\db\Command->actionRun()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#27 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#28 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#29 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('queue/run', Array)
+#30 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('queue/run', Array)
+#31 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#32 /var/www/html/protected/yii(29): yii\base\Application->run()
+#33 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('fbeb070104f6587...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('fbeb070104f6587...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#9 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1104): call_user_func(Object(Closure), Object(yii\db\Connection))
+#11 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('yii\\queue\\db\\Qu...', 3)
+#13 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(177): yii\mutex\Mutex->acquire('yii\\queue\\db\\Qu...', 3)
+#14 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(yii\db\Connection))
+#15 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#16 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(212): yii\db\Connection->useMaster(Object(Closure))
+#17 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(78): yii\queue\db\Queue->reserve()
+#18 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(Closure))
+#19 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/cli/Queue.php(117): call_user_func(Object(Closure), Object(Closure))
+#20 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(93): yii\queue\cli\Queue->runWorker(Object(Closure))
+#21 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Command.php(56): yii\queue\db\Queue->run(false)
+#22 [internal function]: yii\queue\db\Command->actionRun()
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#25 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#27 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('queue/run', Array)
+#28 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('queue/run', Array)
+#29 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#30 /var/www/html/protected/yii(29): yii\base\Application->run()
+#31 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2002
+    [2] => No such file or directory
+)
+
+2021-07-23 16:44:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033441.4695
+    'REQUEST_TIME' => 1627033441
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'queue/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:44:01 [-][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1088): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(93): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(158): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(191): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(137): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2021-07-23 16:44:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033441.4695
+    'REQUEST_TIME' => 1627033441
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'queue/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:45:01 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:710
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(710): PDO->__construct('mysql:host=loca...', '', '', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(631): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('fbeb070104f6587...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('fbeb070104f6587...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#11 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1104): call_user_func(Object(Closure), Object(yii\db\Connection))
+#13 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#14 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('yii\\queue\\db\\Qu...', 3)
+#15 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(177): yii\mutex\Mutex->acquire('yii\\queue\\db\\Qu...', 3)
+#16 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(yii\db\Connection))
+#17 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#18 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(212): yii\db\Connection->useMaster(Object(Closure))
+#19 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(78): yii\queue\db\Queue->reserve()
+#20 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(Closure))
+#21 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/cli/Queue.php(117): call_user_func(Object(Closure), Object(Closure))
+#22 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(93): yii\queue\cli\Queue->runWorker(Object(Closure))
+#23 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Command.php(56): yii\queue\db\Queue->run(false)
+#24 [internal function]: yii\queue\db\Command->actionRun()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#27 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#28 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#29 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('queue/run', Array)
+#30 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('queue/run', Array)
+#31 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#32 /var/www/html/protected/yii(29): yii\base\Application->run()
+#33 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('fbeb070104f6587...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('fbeb070104f6587...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#9 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1104): call_user_func(Object(Closure), Object(yii\db\Connection))
+#11 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('yii\\queue\\db\\Qu...', 3)
+#13 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(177): yii\mutex\Mutex->acquire('yii\\queue\\db\\Qu...', 3)
+#14 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(yii\db\Connection))
+#15 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#16 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(212): yii\db\Connection->useMaster(Object(Closure))
+#17 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(78): yii\queue\db\Queue->reserve()
+#18 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(Closure))
+#19 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/cli/Queue.php(117): call_user_func(Object(Closure), Object(Closure))
+#20 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(93): yii\queue\cli\Queue->runWorker(Object(Closure))
+#21 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Command.php(56): yii\queue\db\Queue->run(false)
+#22 [internal function]: yii\queue\db\Command->actionRun()
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#25 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#27 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('queue/run', Array)
+#28 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('queue/run', Array)
+#29 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#30 /var/www/html/protected/yii(29): yii\base\Application->run()
+#31 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2002
+    [2] => No such file or directory
+)
+
+2021-07-23 16:45:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033501.6072
+    'REQUEST_TIME' => 1627033501
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'queue/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:45:01 [-][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1088): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(93): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(158): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(191): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(137): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2021-07-23 16:45:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033501.6072
+    'REQUEST_TIME' => 1627033501
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'queue/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:45:01 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:710
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(710): PDO->__construct('mysql:host=loca...', '', '', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(631): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('7a2404201f70a44...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('7a2404201f70a44...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#11 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#13 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#14 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('cron-mutex', 0)
+#15 /var/www/html/protected/humhub/commands/CronController.php(49): yii\mutex\Mutex->acquire('cron-mutex')
+#16 [internal function]: humhub\commands\CronController->actionRun()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#21 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('cron/run', Array)
+#22 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('cron/run', Array)
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#24 /var/www/html/protected/yii(29): yii\base\Application->run()
+#25 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('7a2404201f70a44...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('7a2404201f70a44...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#9 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#11 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('cron-mutex', 0)
+#13 /var/www/html/protected/humhub/commands/CronController.php(49): yii\mutex\Mutex->acquire('cron-mutex')
+#14 [internal function]: humhub\commands\CronController->actionRun()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#16 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#17 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('cron/run', Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('cron/run', Array)
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 /var/www/html/protected/yii(29): yii\base\Application->run()
+#23 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2002
+    [2] => No such file or directory
+)
+
+2021-07-23 16:45:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033501.611
+    'REQUEST_TIME' => 1627033501
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'cron/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:45:01 [-][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1088): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(93): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(158): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(191): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(137): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2021-07-23 16:45:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033501.611
+    'REQUEST_TIME' => 1627033501
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'cron/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:46:01 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:710
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(710): PDO->__construct('mysql:host=loca...', '', '', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(631): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('7a2404201f70a44...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('7a2404201f70a44...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#11 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#13 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#14 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('cron-mutex', 0)
+#15 /var/www/html/protected/humhub/commands/CronController.php(49): yii\mutex\Mutex->acquire('cron-mutex')
+#16 [internal function]: humhub\commands\CronController->actionRun()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#21 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('cron/run', Array)
+#22 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('cron/run', Array)
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#24 /var/www/html/protected/yii(29): yii\base\Application->run()
+#25 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('7a2404201f70a44...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('7a2404201f70a44...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#9 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#11 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('cron-mutex', 0)
+#13 /var/www/html/protected/humhub/commands/CronController.php(49): yii\mutex\Mutex->acquire('cron-mutex')
+#14 [internal function]: humhub\commands\CronController->actionRun()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#16 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#17 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('cron/run', Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('cron/run', Array)
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 /var/www/html/protected/yii(29): yii\base\Application->run()
+#23 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2002
+    [2] => No such file or directory
+)
+
+2021-07-23 16:46:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033561.7683
+    'REQUEST_TIME' => 1627033561
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'cron/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:46:01 [-][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1088): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(93): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(158): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(191): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(137): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2021-07-23 16:46:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033561.7683
+    'REQUEST_TIME' => 1627033561
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'cron/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:46:01 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:710
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(710): PDO->__construct('mysql:host=loca...', '', '', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(631): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('fbeb070104f6587...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('fbeb070104f6587...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#11 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1104): call_user_func(Object(Closure), Object(yii\db\Connection))
+#13 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#14 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('yii\\queue\\db\\Qu...', 3)
+#15 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(177): yii\mutex\Mutex->acquire('yii\\queue\\db\\Qu...', 3)
+#16 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(yii\db\Connection))
+#17 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#18 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(212): yii\db\Connection->useMaster(Object(Closure))
+#19 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(78): yii\queue\db\Queue->reserve()
+#20 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(Closure))
+#21 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/cli/Queue.php(117): call_user_func(Object(Closure), Object(Closure))
+#22 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(93): yii\queue\cli\Queue->runWorker(Object(Closure))
+#23 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Command.php(56): yii\queue\db\Queue->run(false)
+#24 [internal function]: yii\queue\db\Command->actionRun()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#27 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#28 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#29 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('queue/run', Array)
+#30 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('queue/run', Array)
+#31 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#32 /var/www/html/protected/yii(29): yii\base\Application->run()
+#33 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('fbeb070104f6587...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('fbeb070104f6587...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#9 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1104): call_user_func(Object(Closure), Object(yii\db\Connection))
+#11 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('yii\\queue\\db\\Qu...', 3)
+#13 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(177): yii\mutex\Mutex->acquire('yii\\queue\\db\\Qu...', 3)
+#14 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(yii\db\Connection))
+#15 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#16 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(212): yii\db\Connection->useMaster(Object(Closure))
+#17 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(78): yii\queue\db\Queue->reserve()
+#18 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(Closure))
+#19 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/cli/Queue.php(117): call_user_func(Object(Closure), Object(Closure))
+#20 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(93): yii\queue\cli\Queue->runWorker(Object(Closure))
+#21 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Command.php(56): yii\queue\db\Queue->run(false)
+#22 [internal function]: yii\queue\db\Command->actionRun()
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#25 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#27 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('queue/run', Array)
+#28 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('queue/run', Array)
+#29 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#30 /var/www/html/protected/yii(29): yii\base\Application->run()
+#31 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2002
+    [2] => No such file or directory
+)
+
+2021-07-23 16:46:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033561.7659
+    'REQUEST_TIME' => 1627033561
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'queue/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:46:01 [-][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1088): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(93): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(158): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(191): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(137): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2021-07-23 16:46:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033561.7659
+    'REQUEST_TIME' => 1627033561
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'queue/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:47:02 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:710
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(710): PDO->__construct('mysql:host=loca...', '', '', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(631): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('7a2404201f70a44...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('7a2404201f70a44...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#11 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#13 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#14 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('cron-mutex', 0)
+#15 /var/www/html/protected/humhub/commands/CronController.php(49): yii\mutex\Mutex->acquire('cron-mutex')
+#16 [internal function]: humhub\commands\CronController->actionRun()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#21 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('cron/run', Array)
+#22 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('cron/run', Array)
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#24 /var/www/html/protected/yii(29): yii\base\Application->run()
+#25 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('7a2404201f70a44...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('7a2404201f70a44...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#9 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#11 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('cron-mutex', 0)
+#13 /var/www/html/protected/humhub/commands/CronController.php(49): yii\mutex\Mutex->acquire('cron-mutex')
+#14 [internal function]: humhub\commands\CronController->actionRun()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#16 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#17 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('cron/run', Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('cron/run', Array)
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 /var/www/html/protected/yii(29): yii\base\Application->run()
+#23 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2002
+    [2] => No such file or directory
+)
+
+2021-07-23 16:47:02 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033622.0824
+    'REQUEST_TIME' => 1627033622
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'cron/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:47:02 [-][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1088): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(93): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(158): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(191): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(137): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2021-07-23 16:47:02 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033622.0824
+    'REQUEST_TIME' => 1627033622
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'cron/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:47:02 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:710
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(710): PDO->__construct('mysql:host=loca...', '', '', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(631): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('fbeb070104f6587...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('fbeb070104f6587...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#11 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1104): call_user_func(Object(Closure), Object(yii\db\Connection))
+#13 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#14 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('yii\\queue\\db\\Qu...', 3)
+#15 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(177): yii\mutex\Mutex->acquire('yii\\queue\\db\\Qu...', 3)
+#16 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(yii\db\Connection))
+#17 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#18 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(212): yii\db\Connection->useMaster(Object(Closure))
+#19 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(78): yii\queue\db\Queue->reserve()
+#20 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(Closure))
+#21 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/cli/Queue.php(117): call_user_func(Object(Closure), Object(Closure))
+#22 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(93): yii\queue\cli\Queue->runWorker(Object(Closure))
+#23 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Command.php(56): yii\queue\db\Queue->run(false)
+#24 [internal function]: yii\queue\db\Command->actionRun()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#27 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#28 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#29 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('queue/run', Array)
+#30 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('queue/run', Array)
+#31 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#32 /var/www/html/protected/yii(29): yii\base\Application->run()
+#33 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('fbeb070104f6587...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('fbeb070104f6587...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#9 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1104): call_user_func(Object(Closure), Object(yii\db\Connection))
+#11 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('yii\\queue\\db\\Qu...', 3)
+#13 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(177): yii\mutex\Mutex->acquire('yii\\queue\\db\\Qu...', 3)
+#14 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(yii\db\Connection))
+#15 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#16 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(212): yii\db\Connection->useMaster(Object(Closure))
+#17 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(78): yii\queue\db\Queue->reserve()
+#18 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(Closure))
+#19 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/cli/Queue.php(117): call_user_func(Object(Closure), Object(Closure))
+#20 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(93): yii\queue\cli\Queue->runWorker(Object(Closure))
+#21 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Command.php(56): yii\queue\db\Queue->run(false)
+#22 [internal function]: yii\queue\db\Command->actionRun()
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#25 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#27 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('queue/run', Array)
+#28 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('queue/run', Array)
+#29 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#30 /var/www/html/protected/yii(29): yii\base\Application->run()
+#31 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2002
+    [2] => No such file or directory
+)
+
+2021-07-23 16:47:02 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033622.0844
+    'REQUEST_TIME' => 1627033622
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'queue/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:47:02 [-][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1088): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(93): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(158): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(191): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(137): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2021-07-23 16:47:02 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033622.0844
+    'REQUEST_TIME' => 1627033622
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'queue/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:48:01 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:710
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(710): PDO->__construct('mysql:host=loca...', '', '', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(631): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('7a2404201f70a44...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('7a2404201f70a44...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#11 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#13 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#14 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('cron-mutex', 0)
+#15 /var/www/html/protected/humhub/commands/CronController.php(49): yii\mutex\Mutex->acquire('cron-mutex')
+#16 [internal function]: humhub\commands\CronController->actionRun()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#21 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('cron/run', Array)
+#22 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('cron/run', Array)
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#24 /var/www/html/protected/yii(29): yii\base\Application->run()
+#25 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('7a2404201f70a44...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('7a2404201f70a44...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#9 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#11 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('cron-mutex', 0)
+#13 /var/www/html/protected/humhub/commands/CronController.php(49): yii\mutex\Mutex->acquire('cron-mutex')
+#14 [internal function]: humhub\commands\CronController->actionRun()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#16 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#17 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('cron/run', Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('cron/run', Array)
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 /var/www/html/protected/yii(29): yii\base\Application->run()
+#23 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2002
+    [2] => No such file or directory
+)
+
+2021-07-23 16:48:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033681.438
+    'REQUEST_TIME' => 1627033681
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'cron/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:48:01 [-][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1088): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(93): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(158): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(191): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(137): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2021-07-23 16:48:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033681.438
+    'REQUEST_TIME' => 1627033681
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'cron/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:48:01 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:710
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(710): PDO->__construct('mysql:host=loca...', '', '', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(631): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('fbeb070104f6587...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('fbeb070104f6587...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#11 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1104): call_user_func(Object(Closure), Object(yii\db\Connection))
+#13 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#14 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('yii\\queue\\db\\Qu...', 3)
+#15 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(177): yii\mutex\Mutex->acquire('yii\\queue\\db\\Qu...', 3)
+#16 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(yii\db\Connection))
+#17 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#18 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(212): yii\db\Connection->useMaster(Object(Closure))
+#19 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(78): yii\queue\db\Queue->reserve()
+#20 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(Closure))
+#21 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/cli/Queue.php(117): call_user_func(Object(Closure), Object(Closure))
+#22 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(93): yii\queue\cli\Queue->runWorker(Object(Closure))
+#23 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Command.php(56): yii\queue\db\Queue->run(false)
+#24 [internal function]: yii\queue\db\Command->actionRun()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#27 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#28 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#29 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('queue/run', Array)
+#30 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('queue/run', Array)
+#31 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#32 /var/www/html/protected/yii(29): yii\base\Application->run()
+#33 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('fbeb070104f6587...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('fbeb070104f6587...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#9 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1104): call_user_func(Object(Closure), Object(yii\db\Connection))
+#11 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('yii\\queue\\db\\Qu...', 3)
+#13 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(177): yii\mutex\Mutex->acquire('yii\\queue\\db\\Qu...', 3)
+#14 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(yii\db\Connection))
+#15 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#16 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(212): yii\db\Connection->useMaster(Object(Closure))
+#17 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(78): yii\queue\db\Queue->reserve()
+#18 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(Closure))
+#19 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/cli/Queue.php(117): call_user_func(Object(Closure), Object(Closure))
+#20 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(93): yii\queue\cli\Queue->runWorker(Object(Closure))
+#21 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Command.php(56): yii\queue\db\Queue->run(false)
+#22 [internal function]: yii\queue\db\Command->actionRun()
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#25 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#27 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('queue/run', Array)
+#28 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('queue/run', Array)
+#29 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#30 /var/www/html/protected/yii(29): yii\base\Application->run()
+#31 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2002
+    [2] => No such file or directory
+)
+
+2021-07-23 16:48:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033681.4399
+    'REQUEST_TIME' => 1627033681
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'queue/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:48:01 [-][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1088): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(93): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(158): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(191): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(137): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2021-07-23 16:48:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033681.4399
+    'REQUEST_TIME' => 1627033681
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'queue/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:49:01 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:710
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(710): PDO->__construct('mysql:host=loca...', '', '', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(631): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('7a2404201f70a44...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('7a2404201f70a44...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#11 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#13 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#14 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('cron-mutex', 0)
+#15 /var/www/html/protected/humhub/commands/CronController.php(49): yii\mutex\Mutex->acquire('cron-mutex')
+#16 [internal function]: humhub\commands\CronController->actionRun()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#21 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('cron/run', Array)
+#22 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('cron/run', Array)
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#24 /var/www/html/protected/yii(29): yii\base\Application->run()
+#25 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('7a2404201f70a44...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('7a2404201f70a44...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#9 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#11 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('cron-mutex', 0)
+#13 /var/www/html/protected/humhub/commands/CronController.php(49): yii\mutex\Mutex->acquire('cron-mutex')
+#14 [internal function]: humhub\commands\CronController->actionRun()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#16 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#17 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('cron/run', Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('cron/run', Array)
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 /var/www/html/protected/yii(29): yii\base\Application->run()
+#23 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2002
+    [2] => No such file or directory
+)
+
+2021-07-23 16:49:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033741.7009
+    'REQUEST_TIME' => 1627033741
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'cron/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:49:01 [-][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1088): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(93): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(158): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(191): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(137): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2021-07-23 16:49:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033741.7009
+    'REQUEST_TIME' => 1627033741
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'cron/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:49:01 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:710
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(710): PDO->__construct('mysql:host=loca...', '', '', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(631): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('fbeb070104f6587...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('fbeb070104f6587...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#11 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1104): call_user_func(Object(Closure), Object(yii\db\Connection))
+#13 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#14 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('yii\\queue\\db\\Qu...', 3)
+#15 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(177): yii\mutex\Mutex->acquire('yii\\queue\\db\\Qu...', 3)
+#16 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(yii\db\Connection))
+#17 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#18 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(212): yii\db\Connection->useMaster(Object(Closure))
+#19 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(78): yii\queue\db\Queue->reserve()
+#20 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(Closure))
+#21 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/cli/Queue.php(117): call_user_func(Object(Closure), Object(Closure))
+#22 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(93): yii\queue\cli\Queue->runWorker(Object(Closure))
+#23 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Command.php(56): yii\queue\db\Queue->run(false)
+#24 [internal function]: yii\queue\db\Command->actionRun()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#27 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#28 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#29 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('queue/run', Array)
+#30 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('queue/run', Array)
+#31 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#32 /var/www/html/protected/yii(29): yii\base\Application->run()
+#33 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('fbeb070104f6587...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('fbeb070104f6587...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1144): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(64): yii\db\Command->queryScalar()
+#9 [internal function]: yii\mutex\MysqlMutex->yii\mutex\{closure}(Object(yii\db\Connection))
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1104): call_user_func(Object(Closure), Object(yii\db\Connection))
+#11 /var/www/html/protected/vendor/yiisoft/yii2/mutex/MysqlMutex.php(65): yii\db\Connection->useMaster(Object(Closure))
+#12 /var/www/html/protected/vendor/yiisoft/yii2/mutex/Mutex.php(72): yii\mutex\MysqlMutex->acquireLock('yii\\queue\\db\\Qu...', 3)
+#13 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(177): yii\mutex\Mutex->acquire('yii\\queue\\db\\Qu...', 3)
+#14 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(yii\db\Connection))
+#15 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1093): call_user_func(Object(Closure), Object(yii\db\Connection))
+#16 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(212): yii\db\Connection->useMaster(Object(Closure))
+#17 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(78): yii\queue\db\Queue->reserve()
+#18 [internal function]: yii\queue\db\Queue->yii\queue\db\{closure}(Object(Closure))
+#19 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/cli/Queue.php(117): call_user_func(Object(Closure), Object(Closure))
+#20 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Queue.php(93): yii\queue\cli\Queue->runWorker(Object(Closure))
+#21 /var/www/html/protected/vendor/yiisoft/yii2-queue/src/drivers/db/Command.php(56): yii\queue\db\Queue->run(false)
+#22 [internal function]: yii\queue\db\Command->actionRun()
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#25 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(184): yii\base\Controller->runAction('run', Array)
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(534): yii\console\Controller->runAction('run', Array)
+#27 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(181): yii\base\Module->runAction('queue/run', Array)
+#28 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(148): yii\console\Application->runAction('queue/run', Array)
+#29 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#30 /var/www/html/protected/yii(29): yii\base\Application->run()
+#31 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2002
+    [2] => No such file or directory
+)
+
+2021-07-23 16:49:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033741.6997
+    'REQUEST_TIME' => 1627033741
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'queue/run'
+    ]
+    'argc' => 2
+]
+2021-07-23 16:49:01 [-][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:642
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1030): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(1017): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(909): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(211): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1123): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(1088): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(93): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(158): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(191): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(137): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2021-07-23 16:49:01 [-][-][-][info][application] $_GET = []
+
+$_SERVER = [
+    'HOME' => '/root'
+    'LOGNAME' => 'root'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+    'SHELL' => '/bin/sh'
+    'PWD' => '/root'
+    'PHP_SELF' => '/var/www/html/protected/yii'
+    'SCRIPT_NAME' => '/var/www/html/protected/yii'
+    'SCRIPT_FILENAME' => '/var/www/html/protected/yii'
+    'PATH_TRANSLATED' => '/var/www/html/protected/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1627033741.6997
+    'REQUEST_TIME' => 1627033741
+    'argv' => [
+        0 => '/var/www/html/protected/yii'
+        1 => 'queue/run'
+    ]
+    'argc' => 2
+]

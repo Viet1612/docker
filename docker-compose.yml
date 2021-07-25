@@ -1,0 +1,43 @@
+version: '3'
+services:
+    nginx:
+        container_name: nginx-container1
+        restart: always
+        build: ./nginx/    
+        ports:  
+            - 80:80
+        # volumes:  
+        #     - ./www/html/:/var/www/html/
+        networks:
+            - app-network
+  #PHP Service
+    php:
+        container_name: php-container1
+        restart: always
+        build: ./php/  
+        # volumes:  
+        #     - ./www/html/:/var/www/html/
+        networks:
+            - app-network
+
+
+    mysql:    
+        image: mariadb:10.2
+        container_name: mariadb-container
+        restart: always
+        environment:  
+            MYSQL_ROOT_PASSWORD: root  
+            MYSQL_DATABASE: humhub  
+            MYSQL_USER: humhub  
+            MYSQL_PASSWORD: humhub 
+        networks:
+            - app-network
+
+
+networks:
+    app-network:
+        driver: bridge
+
+volumes:
+    dbdata:
+        driver: local

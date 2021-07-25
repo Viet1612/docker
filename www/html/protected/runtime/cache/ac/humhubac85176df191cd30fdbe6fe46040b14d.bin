@@ -1,0 +1,19 @@
+a:2:{i:0;s:1347:"
+
+
+    <div class="media">
+                    <!-- Show user image -->
+            <span class="pull-left"><img class="media-object img-rounded" src="/uploads/profile_image/dd64120f-67e8-4f56-9d97-68d6b2849029.jpg?m=1626690852" width="32" alt="Ảnh đại diện của Viet Tran" style="width: 32px; height: 32px" data-contentcontainer-id="1"></span>        
+        <!-- Show space image, if you are outside from a space -->
+                                    <div class="img-space pull-left space-profile-acronym-1 space-acronym" style=" background-color: #6fdbe8; width: 20px; height: 20px; font-size: 8.8px; padding: 3.6px 0; border-radius: 2px;" data-contentcontainer-id="2">WS</div><img class="img-space pull-left space-profile-image-1 img-rounded profile-user-photo hidden" src="/static/img/default_space.jpg" alt="Welcome Space" style=" width: 20px; height: 20px" data-contentcontainer-id="2">            
+        
+        <div class="media-body text-break">
+
+            <!-- Show content -->
+            <strong>Viet Tran</strong> vừa tạo diễn đàn mới <strong>Welcome Space</strong>            <br>
+
+            <!-- show time -->
+            <time class="tt time timeago" data-ui-addition="timeago" datetime="2021-07-19T17:34:09+07:00" title="19 thg 7, 2021 - 17:34">19 thg 7, 2021 - 17:34</time>        </div>
+    </div>
+
+";i:1;N;}
